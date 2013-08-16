@@ -1479,7 +1479,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>[^'",) \t]+</string>
+					<string>[^'",) \t\d]+</string>
 					<key>name</key>
 					<string>variable.parameter.url.scss</string>
 				</dict>
