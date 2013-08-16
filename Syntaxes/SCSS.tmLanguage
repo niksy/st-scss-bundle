@@ -1864,7 +1864,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(:+)(-(webkit|moz)-)?\b(after|before|first-letter|first-line|selection|any-link|local-link|input-placeholder|focus-inner|matches|nth-match|column|nth-column)\b</string>
+			<string>(:+)(-(?:webkit|moz|ms|o)-)?\b(after|before|first-letter|first-line|selection|any-link|local-link|placeholder|input-placeholder|focus-inner|matches|nth-match|column|nth-column)\b</string>
 			<key>name</key>
 			<string>entity.other.attribute-name.pseudo-element.css</string>
 		</dict>
