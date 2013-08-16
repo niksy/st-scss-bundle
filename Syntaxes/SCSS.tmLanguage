@@ -77,6 +77,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#at_rule_viewport</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#at_rule_page</string>
 		</dict>
 		<dict>
@@ -303,6 +307,45 @@
 					<string>\s*(?=\{)</string>
 					<key>name</key>
 					<string>meta.at-rule.fontface.scss</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#function_attributes</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>at_rule_viewport</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>^\s*((@)(\-[\w\-]*\-)?viewport)\s*(?=\{)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.control.at-rule.viewport.scss</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.keyword.scss</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.keyword.scss</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\s*(?=\{)</string>
+					<key>name</key>
+					<string>meta.at-rule.viewport.scss</string>
 					<key>patterns</key>
 					<array>
 						<dict>
