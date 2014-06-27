@@ -283,6 +283,51 @@
 				</dict>
 			</array>
 		</dict>
+		<key>at_rule_atroot</key>
+		<dict>
+			<key>begin</key>
+			<string>\s*((@)at-root\b)\s*</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.at-rule.import.scss</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.keyword.scss</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>\s*(?=\{|\;)</string>
+			<key>name</key>
+			<string>meta.at-rule.import.scss</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#variable</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#selectors</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#property_values</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#function_attributes</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#functions</string>
+				</dict>
+			</array>
+		</dict>
 		<key>at_rule_fontface</key>
 		<dict>
 			<key>patterns</key>
@@ -1716,6 +1761,10 @@
 				<dict>
 					<key>include</key>
 					<string>#at_rule_extend</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#at_rule_atroot</string>
 				</dict>
 				<dict>
 					<key>include</key>
