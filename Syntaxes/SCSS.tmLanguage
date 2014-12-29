@@ -1177,7 +1177,7 @@
 		<key>at_rule_warn</key>
 		<dict>
 			<key>begin</key>
-			<string>\s*((@)(warn|debug)\b)\s*</string>
+			<string>\s*((@)(warn|debug|error)\b)\s*</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
