@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>comment</key>
-	<string>SCSS Version 2 Grammar by Mario "Kuroir" Ricalde (http://kuroir.com)</string>
+	<string>SCSS</string>
 	<key>fileTypes</key>
 	<array>
 		<string>scss</string>
@@ -94,6 +94,104 @@
 	</array>
 	<key>repository</key>
 	<dict>
+		<key>sass_script_list</key>
+		<dict>
+			<key>begin</key>
+			<string>\s*\(\s*</string>
+			<key>end</key>
+			<string>\s*\)</string>
+			<key>name</key>
+			<string>meta.property-name.list.scss</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#interpolation</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#variable</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#constant_rgb</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#constant_number</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#constant_unit</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#functions</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#function_attributes</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#tag_parent_reference</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#property_values</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#dotdotdot</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#reserved_words</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#constant_important</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#constant_optional</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#constant_default</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#constant_global</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#logical_operators</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#string_double</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#string_single</string>
+				</dict>
+			</array>
+		</dict>
+		<key>reserved_words</key>
+		<dict>
+			<key>match</key>
+			<string>\b(false|from|in|not|null|through|to|true)\b</string>
+			<key>name</key>
+			<string>support.type.property-name.css.scss</string>
+		</dict>
+		<key>dotdotdot</key>
+		<dict>
+			<key>match</key>
+			<string>\.\.\.</string>
+			<key>name</key>
+			<string>variable.other.scss</string>
+		</dict>
 		<key>at_rule__</key>
 		<dict>
 			<key>comment</key>
@@ -1193,13 +1291,6 @@
 			<key>name</key>
 			<string>support.constant.color.w3c-standard-color-name.scss</string>
 		</dict>
-		<key>constant_default</key>
-		<dict>
-			<key>match</key>
-			<string>\!default</string>
-			<key>name</key>
-			<string>keyword.other.default.scss</string>
-		</dict>
 		<key>constant_deprecated_color</key>
 		<dict>
 			<key>comment</key>
@@ -1273,6 +1364,27 @@
 			<key>name</key>
 			<string>keyword.other.important.scss</string>
 		</dict>
+		<key>constant_optional</key>
+		<dict>
+			<key>match</key>
+			<string>\!optional</string>
+			<key>name</key>
+			<string>keyword.other.optional.scss</string>
+		</dict>
+		<key>constant_default</key>
+		<dict>
+			<key>match</key>
+			<string>\!default</string>
+			<key>name</key>
+			<string>keyword.other.default.scss</string>
+		</dict>
+		<key>constant_global</key>
+		<dict>
+			<key>match</key>
+			<string>\!global</string>
+			<key>name</key>
+			<string>keyword.other.global.scss</string>
+		</dict>
 		<key>constant_mathematical_symbols</key>
 		<dict>
 			<key>match</key>
@@ -1286,13 +1398,6 @@
 			<string>[\+|\-]?(\s*)?([0-9]+(\.[0-9]+)?|\.[0-9]+)</string>
 			<key>name</key>
 			<string>constant.numeric.scss</string>
-		</dict>
-		<key>constant_optional</key>
-		<dict>
-			<key>match</key>
-			<string>\!optional</string>
-			<key>name</key>
-			<string>keyword.other.optional.scss</string>
 		</dict>
 		<key>constant_property_value</key>
 		<dict>
@@ -1563,6 +1668,10 @@
 				<dict>
 					<key>include</key>
 					<string>#comment_block</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#sass_script_list</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -2155,6 +2264,10 @@
 			<string>meta.set.variable</string>
 			<key>patterns</key>
 			<array>
+				<dict>
+					<key>include</key>
+					<string>#sass_script_list</string>
+				</dict>
 				<dict>
 					<key>include</key>
 					<string>#property_values</string>
