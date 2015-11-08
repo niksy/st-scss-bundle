@@ -1274,7 +1274,7 @@
 		<key>comment_line</key>
 		<dict>
 			<key>begin</key>
-			<string>(\s*)//</string>
+			<string>(\s*)(?&lt;!url\()\/\/</string>
 			<key>comment</key>
 			<string>Revamped</string>
 			<key>end</key>
