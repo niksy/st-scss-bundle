@@ -1905,6 +1905,10 @@
 					<key>include</key>
 					<string>#constant_mathematical_symbols</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#function-content-var</string>
+				</dict>
 			</array>
 		</dict>
 		<key>rules</key>
@@ -2290,6 +2294,13 @@
 			</dict>
 			<key>match</key>
 			<string>\s*(\$[A-Za-z0-9_-]+\b)\s*</string>
+		</dict>
+		<key>function-content-var</key>
+		<dict>
+			<key>match</key>
+			<string>(?&lt;=var\().+(?=\))</string>
+			<key>name</key>
+			<string>variable.other.scss</string>
 		</dict>
 	</dict>
 	<key>scopeName</key>
