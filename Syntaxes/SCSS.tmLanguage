@@ -2215,6 +2215,10 @@
 					<key>name</key>
 					<string>constant.character.escape.scss</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#interpolation</string>
+				</dict>
 			</array>
 		</dict>
 		<key>tag_parent_reference</key>
