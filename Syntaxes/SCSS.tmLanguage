@@ -2062,6 +2062,26 @@
 			<key>name</key>
 			<string>entity.other.attribute-name.pseudo-class.css</string>
 		</dict>
+		<key>selector_custom_pseudo_class</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.entity.css</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>constant.numeric.scss</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(:+)\b((?:enter))</string>
+			<key>name</key>
+			<string>entity.other.attribute-name.custom-pseudo-class.css</string>
+		</dict>
 		<key>selector_pseudo_element</key>
 		<dict>
 			<key>captures</key>
@@ -2118,6 +2138,10 @@
 				<dict>
 					<key>include</key>
 					<string>#selector_pseudo_class</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#selector_custom_pseudo_class</string>
 				</dict>
 				<dict>
 					<key>include</key>
