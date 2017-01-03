@@ -1712,6 +1712,43 @@
 				</dict>
 				<dict>
 					<key>begin</key>
+					<string>(?&lt;=composes)\s*(:)\s*(?!(\s*{))</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.separator.key-value.scss</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>Kuroir: fixed nested elements for sass.</string>
+					<key>end</key>
+					<string>\s*(;|(?=\}))</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.terminator.rule.scss</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.property-value.css-modules.scss</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#general</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#property_values_css_modules</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
 					<string>(:)\s*(?!(\s*{))</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -1828,6 +1865,34 @@
 				<dict>
 					<key>include</key>
 					<string>#property_name_error</string>
+				</dict>
+			</array>
+		</dict>
+		<key>property_values_css_modules</key>
+		<dict>
+			<key>comment</key>
+			<string>Stuff that should only be available on values.</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>("|')</string>
+					<key>end</key>
+					<string>("|')</string>
+					<key>name</key>
+					<string>meta.import.css-modules.scss</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>[a-zA-Z0-9_-]+</string>
+					<key>name</key>
+					<string>entity.other.attribute-name.class.css</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\s*(from)\s*</string>
+					<key>name</key>
+					<string>entity.name.tag.scss</string>
 				</dict>
 			</array>
 		</dict>
@@ -2062,7 +2127,7 @@
 			<key>name</key>
 			<string>entity.other.attribute-name.pseudo-class.css</string>
 		</dict>
-		<key>selector_custom_pseudo_class</key>
+		<key>selector_css_modules_pseudo_class</key>
 		<dict>
 			<key>captures</key>
 			<dict>
@@ -2071,10 +2136,20 @@
 					<key>name</key>
 					<string>punctuation.definition.entity.css</string>
 				</dict>
-				<key>3</key>
+			</dict>
+			<key>match</key>
+			<string>(:+)\b((?:local|global))</string>
+			<key>name</key>
+			<string>entity.other.attribute-name.pseudo-class.css-modules.css</string>
+		</dict>
+		<key>selector_custom_pseudo_class</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>constant.numeric.scss</string>
+					<string>punctuation.definition.entity.css</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -2138,6 +2213,10 @@
 				<dict>
 					<key>include</key>
 					<string>#selector_pseudo_class</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#selector_css_modules_pseudo_class</string>
 				</dict>
 				<dict>
 					<key>include</key>
